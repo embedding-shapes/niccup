@@ -51,6 +51,7 @@ Some more involved examples:
 - [docs](examples/docs/) - NixOS module documentation generator
 - [quine](examples/quine/) - Self-rendering page
 
+The website for niccup is generated dynamically with niccup too, the [whole source](https://github.com/embedding-shapes/niccup/blob/master/website.nix) is ~120 lines of Nix as well
 
 ## Data Model
 
