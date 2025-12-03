@@ -26,6 +26,7 @@ let
 
   exampleMeta = {
     docs = { files = [ "build.nix" "components.nix" "options.nix" ]; };
+    quine = { files = [ "flake.nix" "build.nix" ]; };
   };
 
   showcaseStyles = ''
