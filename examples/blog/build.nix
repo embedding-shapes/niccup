@@ -19,6 +19,7 @@ let
     [ "head"
       [ "meta" { charset = "utf-8"; } ]
       [ "title" title ]
+      [ "style" (h.raw "body { color: #eee; } a { color: #6ab0ff; }") ]
     ]
     [ "body"
       header
