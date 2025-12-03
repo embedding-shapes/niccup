@@ -5,27 +5,31 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "path": "../..",
-        "type": "path"
+        "lastModified": 1764783985,
+        "narHash": "sha256-V8qD3ggP0H99dQc2cFGQoJfnScJJleuLXVXxBD8kwgU=",
+        "owner": "embedding-shapes",
+        "repo": "niccup",
+        "rev": "885354db9b91ed08be57880bcd2e4881e6d1d1fe",
+        "type": "github"
       },
       "original": {
-        "path": "../..",
-        "type": "path"
-      },
-      "parent": []
+        "owner": "embedding-shapes",
+        "repo": "niccup",
+        "type": "github"
+      }
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1735563628,
-        "narHash": "sha256-OnSAY7XDSx7CtDoqNh8jwVwh4xNL/2HaJxGjryLWzX8=",
+        "lastModified": 1764522689,
+        "narHash": "sha256-SqUuBFjhl/kpDiVaKLQBoD8TLD+/cTUzzgVFoaHrkqY=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "b134951a4c9f3c995fd7be05f3243f8ecd65d798",
+        "rev": "8bb5646e0bed5dbd3ab08c7a7cc15b75ab4e1d0f",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
-        "ref": "nixos-24.05",
+        "ref": "nixos-25.11",
         "repo": "nixpkgs",
         "type": "github"
       }

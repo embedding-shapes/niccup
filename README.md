@@ -44,6 +44,14 @@ Write to file (use nixpkgs `writeText`):
 pkgs.writeText "index.html" (inputs.niccup.lib.render [ "p" "Hello" ])
 ```
 
+Some more involved examples:
+
+- [art](examples/art/) - Generative SVG (Sierpinski triangle)
+- [blog](examples/blog/) - Multi-page blog with navigation
+- [docs](examples/docs/) - NixOS module documentation generator
+- [quine](examples/quine/) - Self-rendering page
+
+
 ## Data Model
 
 **Element**: `[ tag-spec attrs? children... ]`
@@ -66,10 +74,10 @@ pkgs.writeText "index.html" (inputs.niccup.lib.render [ "p" "Hello" ])
 
 ## API
 
-- `render : expr -> string` — Render to minified HTML string.
-- `renderPretty : expr -> string` — Render to indented, human-readable HTML.
-- `raw : string -> node` — Mark content as unescaped HTML.
-- `comment : string -> node` — Emit HTML comment.
+- `render : expr -> string` - Render to minified HTML string.
+- `renderPretty : expr -> string` - Render to indented, human-readable HTML.
+- `raw : string -> node` - Mark content as unescaped HTML.
+- `comment : string -> node` - Emit HTML comment.
 
 Exported as `lib` from the flake.
 
