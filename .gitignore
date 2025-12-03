@@ -1,0 +1,12 @@
+# Nix build outputs
+**/result
+**/result-*
+
+# Direnv
+/.direnv
+.envrc
+
+# Editor swap/backup
+*~
+.*.swp
+
