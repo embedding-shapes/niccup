@@ -61,8 +61,9 @@ let
 
   # Homepage
   readme = builtins.readFile ./README.md;
+  readmeForWeb = builtins.replaceStrings [ "/build.nix)" ] [ "/)" ] readme;
   readmeHtml = pkgs.runCommand "readme-html" { buildInputs = [ pkgs.cmark ]; } ''
-    echo ${pkgs.lib.escapeShellArg readme} | cmark > $out
+    echo ${pkgs.lib.escapeShellArg readmeForWeb} | cmark > $out
   '';
 
   homeStyles = ''

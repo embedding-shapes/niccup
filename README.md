@@ -46,10 +46,10 @@ pkgs.writeText "index.html" (inputs.niccup.lib.render [ "p" "Hello" ])
 
 Some more involved examples:
 
-- [art](examples/art/) - Generative SVG (Sierpinski triangle)
-- [blog](examples/blog/) - Multi-page blog with navigation
-- [docs](examples/docs/) - NixOS module documentation generator
-- [quine](examples/quine/) - Self-rendering page
+- [art](examples/art/build.nix) - Generative SVG (Sierpinski triangle)
+- [blog](examples/blog/build.nix) - Multi-page blog with navigation
+- [docs](examples/docs/build.nix) - NixOS module documentation generator
+- [quine](examples/quine/build.nix) - Self-rendering page
 
 The website for niccup is generated dynamically with niccup too, the [whole source](https://github.com/embedding-shapes/niccup/blob/master/website.nix) is ~120 lines of Nix as well
 
