@@ -24,6 +24,10 @@ let
     builtins.filter (name: if name == "docs" then isLinux else true) exampleDirs
   );
 
+  exampleMeta = {
+    docs = { files = [ "build.nix" "components.nix" "options.nix" ]; };
+  };
+
   showcaseStyles = ''
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { display: flex; flex-direction: column; height: 100vh; font-family: system-ui, sans-serif; background: #1a1a2e; color: #ccc; }
@@ -33,8 +37,11 @@ let
     .topbar .current { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
     .content { display: flex; flex: 1; min-height: 0; }
     .source { flex: 1; overflow: auto; padding: 1rem; border-right: 1px solid #333; }
-    .source pre { margin: 0; font-size: 0.8rem; line-height: 1.4; white-space: pre-wrap; word-break: break-word; }
-    .source code { font-family: ui-monospace, monospace; }
+    .file { margin-top: 1rem; }
+    .file:first-child { margin-top: 0; }
+    .file h3 { display: inline-block; font-size: 0.7rem; font-weight: 600; color: #aaa; background: #252540; padding: 0.3rem 0.6rem; border-radius: 4px 4px 0 0; margin: 0; }
+    .file pre { margin: 0; padding: 0.8rem; font-size: 0.8rem; line-height: 1.4; white-space: pre-wrap; word-break: break-word; background: #12121f; border-radius: 0 4px 4px 4px; }
+    .file code { font-family: ui-monospace, monospace; }
     .preview { flex: 1; }
     .preview iframe { width: 100%; height: 100%; border: none; }
   '';
@@ -50,9 +57,15 @@ let
     (builtins.tail (pkgs.lib.concatMap (name: [ " - " (exampleLink current name) ]) exampleNames))
   ];
 
+  renderFile = name: file: [ "div.file"
+    [ "h3" file ]
+    [ "pre" [ "code" (builtins.readFile ./examples/${name}/${file}) ] ]
+  ];
+
   wrapExample = name: drv:
     let
-      source = builtins.readFile ./examples/${name}/build.nix;
+      meta = exampleMeta.${name} or {};
+      files = meta.files or [ "build.nix" ];
       page = h.render [ "html" { lang = "en"; }
         [ "head"
           [ "meta" { charset = "utf-8"; } ]
@@ -62,7 +75,7 @@ let
         [ "body"
           (navBar name)
           [ "div.content"
-            [ "div.source" [ "pre" [ "code" source ] ] ]
+            [ "div.source" (map (renderFile name) files) ]
             [ "div.preview" [ "iframe" { src = "demo/"; } ] ]
           ]
         ]
