@@ -2,7 +2,7 @@
 
 Hiccup-style HTML generation for Nix. Describe HTML as Nix lists/attrsets, render to strings. Heavily inspired by [hiccup](https://github.com/weavejester/hiccup) (Fast library for rendering HTML in Clojure) by [@weavejester](https://github.com/weavejester)
 
-[View on GitHub](https://github.com/embedding-shapes/niccup)
+[View on GitHub](https://github.com/embedding-shapes/niccup) | [Website/Docs](https://embedding-shapes.github.io/niccup/) | [Introduction Blog Post](https://embedding-shapes.github.io/introducing-niccup/)
 
 ## Installation
 
